@@ -7,10 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    i'm not kiss boys <br>
-    why?
-    because boy gay
-    ok... :( <br>
-    ok im kiss boys now
+<?php
+
+$number= $_POST['number_entered'];
+
+$submitbutton= $_POST['submit'];
+
+
+$randomnumber= mt_rand(1,10);
+
+
+?>
+
+
+<form action="" method="POST">
+Guess a Number Between 1 and 10: 
+<input type="number" name="number_entered" min="1" max="10"/> <br><br>
+
+Result: 
+<?php 
+if ($submitbutton){
+
+if (($number > 0) && ($number <11)){
+if ($number != $randomnumber)
+{
+echo "Incorrect guess. The correct number was $randomnumber. Try again";
+}
+else 
+{
+echo "$randomnumber is the correct guess. You got it right.";
+}
+}
+
+}
+
+?>
+<br><br>
+<input type="submit" name="submit" value="Search"/><br><br>
+</form>
+
 </body>
 </html>
