@@ -5,7 +5,10 @@ if (!isset($_POST["guess"])) {
      $_SESSION["count"] = 0; //Initialize count
      $message = "Welcome to the guessing machine!";
      $_POST["numtobeguessed"] = rand(0,10);
-    
+    // echo $_POST["numtobeguessed"];
+} else if ($_SESSION["count"] > 2) { //out of lives
+    $message = "You're out of lives, go away";
+
 } else if ($_POST["guess"] > $_POST["numtobeguessed"]) { //greater than
     $message = $_POST["guess"]." is too big! Try a smaller number.";
     $_SESSION["count"]++; //Declare the variable $count to increment by 1.
